@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minor Wed-form</title>
+    <meta name="description" content="圧倒的技術が売り、安心安全のWEBデザイン会社">
+    <link rel="icon" href="photo/favicon.svg" type="image/svg+xml">
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet"><!--しっぽり明朝-->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:opsz@18..144&display=swap" rel="stylesheet"><!--Merriweather-->
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="CSS/style.min.css">
+
+    <!--アイコン-->
+    <script src="https://kit.fontawesome.com/3833e00bd1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="wrapper">
+        <img src="photo/logo.png" alt="ロゴ">
+        <ul class="main-nav">
+            <li><a href="index.html"><i class="fa-solid fa-house nav-icon"></i><span class="mobile">ホーム</span></a></li>
+            <li><a href="guideline.html"><i class="fa-solid fa-list-ul nav-icon"></i><span class="mobile">募集要項</span></a></li>
+            <li><a href="form.html"><i class="fa-solid fa-file-export nav-icon"></i><span class="mobile">応募フォーム</span></a></li>
+        </ul>
+    </header>
+    <div class="bg-2">
+        <section class="form wrapper">
+            <h2 class="sub-title">応募フォーム</h2>
+            <p class="sentence">以下の応募フォームにご記入の上、送信してください。</p>
+
+            <form action="#" method="post">
+            <div class="info">
+                <h3>個人情報</h3>
+                <div>
+                    <label for="name">氏名 (漢字)：</label>
+                    <input type="text" id="name" name="your-name" placeholder="夜光　星火" required>
+                </div>
+
+                <div>
+                    <label for="furigana">氏名 (フリガナ)：</label>
+                    <input type="text" id="furigana" name="furigana" autocomplete="off" placeholder="ヤコウ　セイカ">
+                </div>
+
+                <div>
+                    <label for="email">メールアドレス：</label>
+                    <input type="email" name="email" id="email" placeholder="sample@xxx.com" required>
+                </div>
+
+                <div>
+                    <label for="tel">電話番号：</label>
+                    <input type="tel" name="tel" id="tel" placeholder="123-456-7890" required>
+                </div>
+
+                <div>
+                    <label for="birthdate">生年月日：</label>
+                    <input type="date" name="birthdate" id="birthdate" required>
+                </div>
+
+                <div>
+                    <label for="address">現住所：</label>
+                    <input type="text" id="address" name="address" placeholder="兵庫県　神戸市　北区　1-2-34" required>
+                </div>
+            </div>
+
+            <div class="skill">
+                <h3>職務経歴・スキル</h3>
+                <div>
+                    <label for="education">最終学歴：</label>
+                    <input type="text" id="education" name="education" placeholder="学校名、学部・学科、卒業年月" required>
+                </div>
+
+                <div>
+                    <label for="work-experience">職務経歴：</label>
+                    <textarea id="work-experience" name="work-experience" rows="8" placeholder=" これまでの職務経験を新しい順にご記入ください。会社名、職種、担当業務内容、期間など" required></textarea>
+                </div>
+
+                <div>
+                    <label for="design-tools">得意なデザインツール：</label>
+                    <div class="select-box">
+                        <select name="design-tool">
+                            <option value="Photoshop">Adobe Photoshop</option>
+                            <option value="Illustrator">Adobe Illustrator</option>
+                            <option value="Figma">Figma</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label>使用経験のある言語・技術：</label><br>
+                    <label for="html-checkbox">
+                        <input type="checkbox" id="html-checkbox" name="languages-tech" value="HTML">
+                        <span>HTML</span>
+                    </label>
+                    <label for="css-checkbox">
+                        <input type="checkbox" id="css-checkbox" name="languages-tech" value="CSS">
+                        <span>CSS</span>
+                    </label>
+                    <label for="javascript-checkbox">
+                        <input type="checkbox" id="javascript-checkbox" name="languages-tech" value="JavaScript">
+                        <span>JavaScript</span>
+                    </label>
+                    <br class="mobile-only">
+                    <label for="wordpress-checkbox">
+                        <input type="checkbox" id="wordpress-checkbox" name="languages-tech" value="WordPress">
+                        <span>WordPress</span>
+                    </label>
+                    <label for="other-checkbox">
+                        <input type="checkbox" id="other-checkbox" name="languages-tech" value="その他">
+                        <span>その他</span>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="portfolio-url">ポートフォリオURL：</label>
+                    <input type="url" id="portfolio-url" name="portfolio-url" placeholder="ご自身の作品のURLを記入。" required>
+                </div>
+            </div>
+
+            <div class="pr">
+                <h3>志望動機・自己PR</h3>
+                <div>
+                    <label for="reason-for-application">志望動機：</label>
+                    <textarea id="reason-for-application" name="reason-for-application" rows="8" placeholder="具体的にご記入ください。どのような点に魅力を感じたか、どのような貢献ができると考えているかなど" required></textarea>
+                </div>
+
+                <div>
+                    <label for="self-pr">自己PR：</label>
+                    <textarea id="self-pr" name="self-pr" rows="8" placeholder="あなたの強みや、これまでの経験、スキルで当社に貢献できることなどを自由に記述してください" required></textarea>
+                </div>
+            </div>
+
+            <div class="another">
+                <h3>その他</h3>
+                <div>
+                    <label for="contact-time">連絡可能な時間帯：</label>
+                    <input type="text" id="contact-time" name="contact-time" placeholder=" 平日午前中、いつでも可など">
+                </div>
+
+                <div>
+                    <label for="notes">その他特記事項：</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder=" 質問や希望などございましたらご記入ください"></textarea>
+                </div>
+            </div>
+
+            <p>ご応募いただいた内容を確認後、担当者よりご連絡いたします。</p>
+            <input type="submit" class="f-btn" value="送信する">
+            </form>
+        </section><!--/.form-->
+    </div><!--/.bg-2-->
+ 
+    <footer>
+        <ul class="footer-nav no-btn">
+            <li><a href="#">会社概要</a></li>
+            <li><a href="#">サービス内容</a></li>
+            <li><a href="#">スタッフブログ</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

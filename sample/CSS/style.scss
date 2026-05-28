@@ -1,0 +1,543 @@
+@charset "UTF-8";
+/*変数・関数*/
+$base-color:#dedff0;
+$font-color:#185070;
+$accsent-color:#8ED8FA;
+
+@mixin desktop{
+    @media(min-width: 600px){
+        @content;
+    }
+}
+
+/*共通部分*/
+html{
+    font-size: 100%;
+}
+body{
+    font-family: "Merriweather","Shippori Mincho", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+}    
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+li{
+    list-style: none;
+}
+
+/*モバイル版*/
+/*header*/
+header{
+    display: flex;
+    justify-content: space-between;
+}
+header img{
+    height: 100px;
+    margin-top: 10px;
+}
+.main-nav{
+    display: flex;
+    margin-top: 5%;
+}
+.main-nav li{
+    margin-left: 30px;
+}
+.main-nav a{
+    color: $font-color;
+    display: flex;
+    flex-direction: column;
+}
+.main-nav a:hover{
+    color: $accsent-color;
+    border-bottom: 3px solid $accsent-color;
+}
+.wrapper{
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+.nav-icon{
+    font-size: 30px;
+}
+.mobile{
+    font-size: 0.7rem;
+}
+
+/*home*/
+.home{
+    background: url(../photo/home.jpg) no-repeat right top/70vw auto;
+    padding: 5.5rem 1rem 3rem;
+}
+.title{
+    font-size: 1.5rem;
+    margin: 0vw 0 12vw;
+    background-color: rgb(255, 255, 255,.7);
+    padding: 1rem;
+    display: inline-block;
+}
+.home p{
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+.h-btn{
+    background-color: $font-color;
+    color: #fff;
+    padding: 10px 32px;
+    max-width: 100vw;
+}
+
+.h-btn,.btn{
+    -webkit-clip-path: polygon(0 0,94% 0,100% 50%,94% 100%,0 100%);
+    clip-path: polygon(0 0,94% 0,100% 50%,94% 100%,0 100%);
+}
+
+/*circle-graf bar-graf*/
+.circle-graf{
+    background-color: $base-color;
+}
+.sub-title{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    top: 50px;
+    border-bottom: solid 3px $accsent-color;
+}
+.sub-title:after{
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 3px $font-color;
+    bottom: -3px;
+    width: 20%;
+}
+.home-text p{
+    margin-top: 80px;
+}
+.chart-info{
+    margin: 5px;
+    text-align: center;
+}
+.bar-chart{
+    margin-top: 10px;
+}
+/*グラフ装飾*/
+.ct-label{
+    font-size: 1rem;
+    fill:#fff;
+}
+/*円グラフ*/
+.ct-series-a .ct-slice-pie{
+    fill:$font-color;
+}
+.ct-series-b .ct-slice-pie{
+    fill:#0D4459;
+}
+.ct-series-c .ct-slice-pie{
+    fill:#114A5C;
+}
+.ct-series-d .ct-slice-pie{
+    fill:#7EABC2;
+}
+/*棒グラフ*/
+.ct-series-a .ct-bar{
+    stroke: #7EABC2;
+}
+.ct-bar{
+    stroke-width: 16%;
+}
+
+/*guide*/
+.bg{
+    background: url(../photo/guide.jpg) no-repeat left top/70vw auto;
+    padding: 5.5rem 1rem 3rem;
+}
+.sentence{
+    margin-top: 60px;
+}
+.guide,.timeline{
+    background-color: #fff;
+}
+
+/*表　装飾*/
+table{
+    margin:  3.5rem 0;
+    width: 100%;
+}
+th{
+    font-weight: normal;
+    background-color: $accsent-color;
+    vertical-align: middle;
+    padding: 1rem;
+}
+td{
+    padding: .75rem 1rem 1.75rem;
+}
+th,td{
+    display: block;
+}
+
+/*timeline*/
+ol li{
+    list-style: decimal inside;
+    margin-bottom: 2rem;
+}
+ol li::marker{
+    color: $accsent-color;
+    display: inline-block;
+}
+ol h3{
+    font-size: 1.375rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+ol p{
+    margin-top: 10px;
+}
+/*form*/
+.bg-2{
+    background: url(../photo/form.jpg) no-repeat right top/70vw auto;
+    padding: 5.5rem 1rem 3rem;
+}
+.form{
+    background-color: #fff;
+}
+/*フォーム内　装飾*/
+form div{
+    margin: 10px 0;
+}
+form h3{
+    background-image: linear-gradient(transparent 50%,$accsent-color 50%);
+    padding-bottom: .25rem;
+    margin-top: 20px;
+}
+form p{
+    margin-top: 15px;
+}
+.f-btn{
+    background-color: $font-color;
+    color: #fff;
+    padding: 10px 32px;
+    max-width: 100vw;
+    margin: 10px 0;
+}
+input[type="text"],input[type="email"],input[type="tel"],input[type="date"],input[type="url"],textarea{
+    background-color: rgba(222, 223, 240,.5);
+    border: 1px $font-color solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+input[type="text"],input[type="email"],input[type="tel"],input[type="url"]{
+    width: 100%;
+    max-width: 300px;
+}
+textarea{
+    width: 100%;
+    max-width: 480px;
+    height: 8rem;
+}
+input[type="checkbox"]{
+    opacity: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+input[type="checkbox"]+span::before{
+    display: inline-block;
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid $font-color;
+    background: $base-color;
+    margin: -.125rem .5rem 0 0;
+    vertical-align: middle;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding: 0 2px;
+    line-height: 1.5;
+}
+input[type="checkbox"]:checked+span::before{
+    content: '\f00c';
+}
+
+.select-box {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: rgba(222, 223, 240, .5);
+        border: 1px $font-color solid;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1rem;
+        width: 100%;
+        cursor: pointer;
+        padding-right: 30px;
+    }
+}
+
+.select-box::after {
+    content: '\f078';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $font-color;
+    pointer-events: none;
+}
+.mobile-only{
+    display: block;
+}
+
+.form div label[for]:has(+ input[required])::after,
+.form div label[for]:has(+ textarea[required])::after,
+.form div label[for]:has(+ select[required])::after {
+    content: "必須"; 
+    color: #fff; 
+    background-color: #f67690;
+    font-size: .75em; 
+    margin-left: 5px; 
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/*footer*/
+footer{
+    background-color: $font-color;
+    text-align: center;
+    height: 200px;
+}
+.btn{
+    background-color: $base-color;
+    color: $font-color;
+    position: relative;
+    top: 20px;
+    padding: 10px 32px;
+}
+.footer-nav{
+    margin-top: 40px;
+    a{
+        color: $base-color;
+    }
+}
+
+.no-btn{
+    position: relative;
+    top: 80px;
+}
+
+/*デスクトップ版*/
+@include desktop{
+    /*header*/
+    header img{
+    height: 150px;
+    margin-top: 10px;
+    }
+    .main-nav a{
+    display: block;
+    }
+    .mobile{
+        font-size: 1rem;
+    }
+
+    /*home*/
+    .home{
+        padding: 16vw 1rem 5vw;
+    }
+    .title{
+        font-size: 2.5rem;
+        margin:0 0 2rem;
+        background: none;
+        padding: 0;
+    }
+    .home p{
+        width: 40vw;
+        background-color:  rgb(255, 255, 255,.8);
+    }
+    .h-btn{
+        padding: 20px 32px;
+        &:hover{
+            color: $accsent-color;
+        }
+    }
+    /*横並びにする*/
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+    /*左右反転させる*/
+    .reverse{
+        flex-direction: row-reverse;
+    }
+
+    /*guide timeline*/
+    .guide,.timeline{
+    width: 70vw;
+    background-color: #fff;
+    outline:solid 2px $font-color;
+    }
+    /*表　装飾*/
+   table {
+        border-collapse: collapse; 
+        width: 100%;
+    }
+
+    th, td {
+        padding: 1.25rem;
+        display: table-cell;
+        vertical-align: middle; 
+    }
+
+    tr:nth-child(odd) {
+        th, td {
+            background-color: $accsent-color;
+        }
+    }
+
+    tr:nth-child(even) {
+        th, td {
+            background-color: #fff;
+        }
+    }
+    /*timeline*/
+    ol {
+    position: relative;
+    padding-left: 0;
+    }
+    ol li {
+        display: flex;
+        margin-bottom: 0;
+        position: relative;
+    }
+    ol h3 {
+        width: 30%;
+        padding: 2rem 2.5rem 2rem 0;
+        text-align: right;
+        margin: 0; 
+    }
+    ol p {
+        width: 70%;
+        padding: 1.5rem 0 3rem 2.5rem; 
+        position: relative;
+        margin: 0;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: $base-color;
+        }
+    }
+    ol li:last-child p::after {
+        height: 2.5rem;
+    }
+    ol p::before {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        background-color: #7EABC2;
+        text-align: center;
+        line-height: 3rem; 
+        position: absolute;
+        top: 1.5rem;
+        left: -1.5rem; 
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: #fff;
+        font-size: 1.5rem; 
+        z-index: 2; 
+    }
+
+    .icon-file::before{
+        content: '\f56f';
+    }
+    .icon-pc::before{
+        content: '\f109';
+    }
+    .icon-chat::before{
+        content: '\f086';
+    }
+    .icon-hand::before{
+        content: '\f2b5';
+    }
+
+    /*form*/
+    .form {
+        width: 70vw;
+        background-color: #fff;
+        outline: solid 2px $font-color;
+        padding: 4rem; 
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info div, .skill div, .pr div, .another div {
+        display: flex;
+        align-items: center; 
+        margin-bottom: 1.5rem; 
+    }
+
+    .info div:has(textarea), .skill div:has(textarea), .pr div:has(textarea), .another div:has(textarea) {
+        align-items: flex-start;
+        label {
+            margin-top: 10px; 
+        }
+    }
+
+    .form div label[for], 
+    .form div label:not([for]) { 
+        width: 250px; 
+        flex-shrink: 0; 
+        display: inline-block;
+    }
+
+    .form div {
+        label:has(input[type="checkbox"]) {
+            width: auto; 
+            margin-right: 1.5rem; 
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+    .f-btn{
+        width: 200px;
+        &:hover{
+            color: $accsent-color;
+        }       
+    }
+    /*footer*/
+    .btn:hover{
+        background-color:$accsent-color ;
+        color:$font-color ;
+    }
+    .footer-nav{
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+        a:hover{
+            color: $accsent-color;
+        }
+    }
+    .footer-nav li{
+        margin-left: 20px;
+    }
+}
